@@ -69,8 +69,6 @@ function! LoadColorScheme(operate)
     else
         echo "Invaild operate"
     endif
-
-    echo g:colors_name
 endfunction
 
 command! -nargs=0 NextColorScheme :call LoadColorScheme("next")
