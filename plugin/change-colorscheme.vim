@@ -1,7 +1,11 @@
+" ==============================================================
 " Contributor: chxuan <787280310@qq.com>
 " Last Change:  2016-05-16
 " Repository: https://github.com/chxuan/change-colorscheme
 " License: MIT
+" Usage: :NextColorScheme ==> Load next colorscheme
+"        :PreviousColorScheme ==> Load previous colorscheme
+"        :colorscheme ==> Show current colorscheme
 " ==============================================================
 
 " Only load this indent file when no other was loaded.
