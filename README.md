@@ -14,7 +14,7 @@ Installation
     cd ./change-colorscheme/plugin
     cp change-colorscheme.vim ~/.vim/plugin
 
-Or if you used [Vundle][1], add `'chxuan/change-colorscheme'` into your `~/.vimrc` and run `:PluginInstall`.
+Or if you used [Vundle][1], add `Plugin 'chxuan/change-colorscheme'` into your `~/.vimrc` and run `:PluginInstall`.
 
 Quickstart
 ------------
@@ -26,7 +26,7 @@ Put something like the following into your `~/.vimrc`:
     map <F9> :PreviousColorScheme<CR>
     imap <F9> <ESC> :PreviousColorScheme<CR>
 
-If you do this the `F12` key will load next colorscheme and the `F11` key will load previous colorscheme. You can of course use any shortcut you want. if you want to know current colorscheme, please run `:colorscheme`.
+If you do this the `F10` key will load next colorscheme and the `F9` key will load previous colorscheme. You can of course use any shortcut you want. if you want to know current colorscheme, please run `:colorscheme`.
 
 Note
 ------------
