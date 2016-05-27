@@ -27,6 +27,10 @@ if !exists("s:colorSchemeList")
     let s:colorSchemeList = []
 endif
     
+if !exists("s:defaultColorSchemeList")
+    let s:defaultColorSchemeList= ['blue', 'delek', 'evening', 'morning', 'peachpuff', 'slate', 'zellner', 'darkblue', 'desert', 'koehler', 'murphy', 'ron', 'default', 'elflord', 'pablo', 'shine', 'torte']
+endif
+
 if !exists("s:currentIndex")
     let s:currentIndex = -1
 endif
@@ -63,6 +67,11 @@ function! LoadColorScheme(operate)
     if !s:isInitColorSchemeList
         let pathList = split(globpath(s:filePath, '*.vim', "\n"))
         let s:colorSchemeList = map(pathList, 'fnamemodify(v:val, ":t:r")')
+
+        for i in range(0, len(s:defaultColorSchemeList) - 1)
+            call add(s:colorSchemeList, s:defaultColorSchemeList[i])
+        endfo
+
         let s:isInitColorSchemeList = 1 "true
     endif
 
