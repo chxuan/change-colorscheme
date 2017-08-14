@@ -39,6 +39,13 @@ if !exists("s:isInitColorSchemeList")
     let s:isInitColorSchemeList = 0 "false
 endif
 
+function! CheckColorScheme(scheme_name)
+    if a:scheme_name == "solarized"
+        execute 'set background=dark'
+        execute 'let g:solarized_termcolors=256'
+    endif
+endfunction
+
 function! LoadNextColorScheme()
     let len = len(s:colorSchemeList)
     if s:currentIndex + 1 >= len
@@ -47,6 +54,7 @@ function! LoadNextColorScheme()
     let s:currentIndex += 1
 
     if len != 0 && s:currentIndex >= 0 && s:currentIndex + 1 <= len
+        call CheckColorScheme(s:colorSchemeList[s:currentIndex])
         execute 'colorscheme ' . s:colorSchemeList[s:currentIndex]
     endif
 endfunction
@@ -59,6 +67,7 @@ function! LoadPreviousColorScheme()
 
     let len = len(s:colorSchemeList)
     if len != 0 && s:currentIndex >= 0 && s:currentIndex + 1 <= len
+        call CheckColorScheme(s:colorSchemeList[s:currentIndex])
         execute 'colorscheme ' . s:colorSchemeList[s:currentIndex]
     endif
 endfunction
