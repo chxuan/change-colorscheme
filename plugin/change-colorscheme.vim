@@ -9,7 +9,7 @@
 " ==============================================================
 
 " Only load this indent file when no other was loaded.
-if exists("loadChangeColorScheme")
+if exists("load_change_color_scheme")
     finish
 endif
 
@@ -17,26 +17,26 @@ if v:version < 700
     echoerr "change-colorscheme: this plugin requires vim >= 7. DOWNLOAD IT! You'll thank me later!"
     finish
 endif
-let LoadChangeColorScheme = 1
+let load_change_color_scheme = 1
 
-if !exists("s:filePath")
-    let s:filePath = "~/.vim/colors"
+if !exists("s:file_path")
+    let s:file_path = "~/.vim/colors"
 endif
 
-if !exists("s:colorSchemeList")
-    let s:colorSchemeList = []
+if !exists("s:color_scheme_list")
+    let s:color_scheme_list = []
 endif
     
-if !exists("s:defaultColorSchemeList")
-    let s:defaultColorSchemeList= ['blue', 'delek', 'evening', 'morning', 'peachpuff', 'slate', 'zellner', 'darkblue', 'desert', 'koehler', 'murphy', 'ron', 'default', 'elflord', 'pablo', 'shine', 'torte']
+if !exists("s:default_color_scheme_list")
+    let s:default_color_scheme_list = ['blue', 'delek', 'evening', 'morning', 'peachpuff', 'slate', 'zellner', 'darkblue', 'desert', 'koehler', 'murphy', 'ron', 'default', 'elflord', 'pablo', 'shine', 'torte']
 endif
 
-if !exists("s:currentIndex")
-    let s:currentIndex = -1
+if !exists("s:current_index")
+    let s:current_index = -1
 endif
 
-if !exists("s:isInitColorSchemeList")
-    let s:isInitColorSchemeList = 0 "false
+if !exists("s:is_init_color_scheme_list")
+    let s:is_init_color_scheme_list = 0 "false
 endif
 
 function! CheckColorScheme(scheme_name)
@@ -47,41 +47,41 @@ function! CheckColorScheme(scheme_name)
 endfunction
 
 function! LoadNextColorScheme()
-    let len = len(s:colorSchemeList)
-    if s:currentIndex + 1 >= len
+    let len = len(s:color_scheme_list)
+    if s:current_index + 1 >= len
         return
     endif
-    let s:currentIndex += 1
+    let s:current_index += 1
 
-    if len != 0 && s:currentIndex >= 0 && s:currentIndex + 1 <= len
-        call CheckColorScheme(s:colorSchemeList[s:currentIndex])
-        execute 'colorscheme ' . s:colorSchemeList[s:currentIndex]
+    if len != 0 && s:current_index >= 0 && s:current_index + 1 <= len
+        call CheckColorScheme(s:color_scheme_list[s:current_index])
+        execute 'colorscheme ' . s:color_scheme_list[s:current_index]
     endif
 endfunction
 
 function! LoadPreviousColorScheme()
-    if s:currentIndex <= 0 
+    if s:current_index <= 0 
         return
     endif
-    let s:currentIndex -= 1
+    let s:current_index -= 1
 
-    let len = len(s:colorSchemeList)
-    if len != 0 && s:currentIndex >= 0 && s:currentIndex + 1 <= len
-        call CheckColorScheme(s:colorSchemeList[s:currentIndex])
-        execute 'colorscheme ' . s:colorSchemeList[s:currentIndex]
+    let len = len(s:color_scheme_list)
+    if len != 0 && s:current_index >= 0 && s:current_index + 1 <= len
+        call CheckColorScheme(s:color_scheme_list[s:current_index])
+        execute 'colorscheme ' . s:color_scheme_list[s:current_index]
     endif
 endfunction
 
 function! LoadColorScheme(operate)
-    if !s:isInitColorSchemeList
-        let pathList = split(globpath(s:filePath, '*.vim', "\n"))
-        let s:colorSchemeList = map(pathList, 'fnamemodify(v:val, ":t:r")')
+    if !s:is_init_color_scheme_list
+        let path_list = split(globpath(s:file_path, '*.vim', "\n"))
+        let s:color_scheme_list = map(path_list, 'fnamemodify(v:val, ":t:r")')
 
-        for i in range(0, len(s:defaultColorSchemeList) - 1)
-            call add(s:colorSchemeList, s:defaultColorSchemeList[i])
+        for i in range(0, len(s:default_color_scheme_list) - 1)
+            call add(s:color_scheme_list, s:default_color_scheme_list[i])
         endfo
 
-        let s:isInitColorSchemeList = 1 "true
+        let s:is_init_color_scheme_list = 1 "true
     endif
 
     if a:operate == "next"
