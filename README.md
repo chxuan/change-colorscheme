@@ -45,5 +45,5 @@ This software is licensed under the [MIT license][3]. © 2016 chxuan
 
 
   [1]: https://github.com/VundleVim/Vundle.vim
-  [2]: https://raw.githubusercontent.com/chxuan/vimplus/master/screenshots/change-colorscheme.gif
+  [2]: https://github.com/chxuan/change-colorscheme/blob/master/screenshots/change-colorscheme.gif
   [3]: https://github.com/chxuan/change-colorscheme/blob/master/LICENSE
