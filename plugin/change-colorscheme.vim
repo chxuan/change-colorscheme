@@ -20,7 +20,7 @@ endif
 let load_change_color_scheme = 1
 
 if !exists("s:file_path")
-    let s:file_path = "~/.vim/colors"
+    let s:file_path = &rtp
 endif
 
 if !exists("s:color_scheme_list")
@@ -74,8 +74,8 @@ endfunction
 
 function! LoadColorScheme(operate)
     if !s:is_init_color_scheme_list
-        let path_list = split(globpath(s:file_path, '*.vim', "\n"))
-        let s:color_scheme_list = map(path_list, 'fnamemodify(v:val, ":t:r")')
+        let path_list = split(globpath(s:file_path, "colors/*.vim", "\n"))
+        let s:color_scheme_list = map(path_list, "substitute(fnamemodify(v:val, ':t'), '\\..\\{-}$', '', '')")
 
         for i in range(0, len(s:default_color_scheme_list) - 1)
             call add(s:color_scheme_list, s:default_color_scheme_list[i])
