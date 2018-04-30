@@ -21,17 +21,17 @@ Quickstart
 
 Put something like the following into your `~/.vimrc`:
 
-    map <F10> :NextColorScheme<CR>
-    imap <F10> <ESC> :NextColorScheme<CR>
-    map <F9> :PreviousColorScheme<CR>
-    imap <F9> <ESC> :PreviousColorScheme<CR>
+    map <silent> <F10> :NextColorScheme<cr>
+    imap <silent> <F10> <esc> :NextColorScheme<cr>
+    map <silent> <F9> :PreviousColorScheme<cr>
+    imap <silent> <F9> <esc> :PreviousColorScheme<cr>
 
 If you do this the `F10` key will load next colorscheme and the `F9` key will load previous colorscheme. You can of course use any shortcut you want. if you want to know current colorscheme, please run `:colorscheme`.
 
 Note
 ------------
 
-This plugin will look for the colorscheme in `~/.vim/colors`.
+This plugin will search for the colorscheme in `~/.vim/colors`.
 
 Screenshots
 ------------
