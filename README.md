@@ -10,11 +10,7 @@ Sometimes we want to quickly browse the theme and find the beautiful theme, I th
 Installation
 ------------
     
-    git https://github.com/chxuan/change-colorscheme.git
-    cd ./change-colorscheme/plugin
-    cp change-colorscheme.vim ~/.vim/plugin
-
-Or if you used [Vundle][1], add `Plugin 'chxuan/change-colorscheme'` into your `~/.vimrc` and run `:PluginInstall`.
+Add `Plugin 'chxuan/change-colorscheme'` into your `~/.vimrc` and run `:PluginInstall`.
 
 Quickstart
 ------------
@@ -44,6 +40,5 @@ License
 This software is licensed under the [MIT license][3]. © 2016 chxuan
 
 
-  [1]: https://github.com/VundleVim/Vundle.vim
   [2]: https://github.com/chxuan/change-colorscheme/blob/master/screenshots/change-colorscheme.gif
   [3]: https://github.com/chxuan/change-colorscheme/blob/master/LICENSE
