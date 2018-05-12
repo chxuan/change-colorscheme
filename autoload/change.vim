@@ -1,18 +1,9 @@
 " ==============================================================
 " Contributor: chxuan <787280310@qq.com>
-" Last Change:  2016-05-16
 " Repository: https://github.com/chxuan/change-colorscheme
+" Create Date: 2016-05-16
 " License: MIT
-" Usage: :NextColorScheme ==> Load next colorscheme
-"        :PreviousColorScheme ==> Load previous colorscheme
-"        :colorscheme ==> Show current colorscheme
 " ==============================================================
-
-if exists("load_change_color_scheme")
-    finish
-endif
-
-let load_change_color_scheme = 1
 
 " 默认文件搜索路径
 let s:file_path = "~/.vim/colors"
