@@ -1,35 +1,28 @@
 change-colorscheme: A quick change theme plugin for vim
 ===============================================
 
-
-Intro
------
-
-Sometimes we want to quickly browse the theme and find the beautiful theme, I think this plugin will meet your requirements.
-
-Installation
+安装
 ------------
     
-Add `Plugin 'chxuan/change-colorscheme'` into your `~/.vimrc` and run `:PluginInstall`.
+如果你使用[Vundle][1]插件管理器, 将 `Plugin 'chxuan/change-colorscheme'` 加到 `~/.vimrc` 然后执行 `:PluginInstall`.
 
-Quickstart
+
+使用
 ------------
 
-Put something like the following into your `~/.vimrc`:
+请将以下配置加到 `~/.vimrc`:
 
-    map <silent> <F10> :NextColorScheme<cr>
-    imap <silent> <F10> <esc> :NextColorScheme<cr>
-    map <silent> <F9> :PreviousColorScheme<cr>
-    imap <silent> <F9> <esc> :PreviousColorScheme<cr>
+    nnoremap <silent> <F10> :NextColorScheme<cr>
+    inoremap <silent> <F10> <esc> :NextColorScheme<cr>
+    nnoremap <silent> <F9> :PreviousColorScheme<cr>
+    inoremap <silent> <F9> <esc> :PreviousColorScheme<cr>
 
-If you do this the `F10` key will load next colorscheme and the `F9` key will load previous colorscheme. You can of course use any shortcut you want. if you want to know current colorscheme, please run `:colorscheme`.
-
-Note
+注意
 ------------
 
-This plugin will search for the colorscheme in `~/.vim/colors`.
+该插件将会加载`~/.vim/colors`下的主题文件.
 
-Screenshots
+截图
 ------------
 
 ![此处输入图片的描述][2]
@@ -39,6 +32,6 @@ License
 
 This software is licensed under the [MIT license][3]. © 2016 chxuan
 
-
+  [1]: https://github.com/VundleVim/Vundle.vim
   [2]: https://github.com/chxuan/change-colorscheme/blob/master/screenshots/change-colorscheme.gif
   [3]: https://github.com/chxuan/change-colorscheme/blob/master/LICENSE
