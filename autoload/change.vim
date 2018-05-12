@@ -60,5 +60,6 @@ endfunction
 
 " 应用主题
 function! s:ApplyTheme(theme_name)
+    echo a:theme_name
     execute 'colorscheme ' . a:theme_name
 endfunction
