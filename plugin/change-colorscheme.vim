@@ -11,6 +11,6 @@ endif
 
 let g:load_change_color_scheme = 1
 
-command! -nargs=0 NextColorScheme :call change#ChangeTheme("next")
-command! -nargs=0 PreviousColorScheme :call change#ChangeTheme("previous")
+command! -nargs=0 NextColorScheme :call change#change_theme("next")
+command! -nargs=0 PreviousColorScheme :call change#change_theme("previous")
 

@@ -17,23 +17,23 @@ let s:current_pos = -1
 let s:is_init_theme_list = 0 
 
 " 改变主题
-function! change#ChangeTheme(operate)
+function! change#change_theme(operate)
     if !s:is_init_theme_list
-        call <sid>ReadThemeList()
+        call <sid>read_theme_list()
         let s:is_init_theme_list = 1
     endif
 
     if a:operate == "next"
-        call <sid>LoadNextTheme()
+        call <sid>load_next_theme()
     elseif a:operate == "previous"
-        call <sid>LoadPreviousTheme()
+        call <sid>load_previous_theme()
     else
         echo "Invaild operate"
     endif
 endfunction
 
 " 读取主题
-function! s:ReadThemeList()
+function! s:read_theme_list()
     let path_list = split(globpath(s:file_path, '*.vim', "\n"))
     let s:theme_list = map(path_list, 'fnamemodify(v:val, ":t:r")')
 
@@ -43,23 +43,23 @@ function! s:ReadThemeList()
 endfunction
 
 " 加载上一个主题
-function! s:LoadPreviousTheme()
+function! s:load_previous_theme()
     if s:current_pos >= 0 
-        call <sid>ApplyTheme(s:theme_list[s:current_pos])
+        call <sid>apply_theme(s:theme_list[s:current_pos])
         let s:current_pos -= 1
     endif
 endfunction
 
 " 加载下一个主题
-function! s:LoadNextTheme()
+function! s:load_next_theme()
     if s:current_pos + 1 <= len(s:theme_list)
-        call <sid>ApplyTheme(s:theme_list[s:current_pos])
+        call <sid>apply_theme(s:theme_list[s:current_pos])
         let s:current_pos += 1
     endif
 endfunction
 
 " 应用主题
-function! s:ApplyTheme(theme_name)
+function! s:apply_theme(theme_name)
     echo a:theme_name
     execute 'colorscheme ' . a:theme_name
 endfunction
