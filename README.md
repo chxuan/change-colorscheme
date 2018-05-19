@@ -22,6 +22,17 @@ change-colorscheme: A quick change theme plugin for vim
     inoremap <silent> <F12> <esc> :ShowColorScheme<cr>
 
 
+特性
+------------
+
+该插件支持以下特性:
+
+- 加载上一个主题
+- 加载下一个主题
+- 随机加载一个主题
+- 显示当前主题
+
+
 注意
 ------------
 
