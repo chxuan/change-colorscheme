@@ -18,20 +18,26 @@ function! change#change#change_theme(operate)
         call <sid>read_theme_list()
     endif
 
-    if a:operate == "next"
-        call <sid>load_next_theme()
-    elseif a:operate == "previous"
-        call <sid>load_previous_theme()
-    elseif a:operate == "random"
-        call <sid>load_theme_by_random()
-    else
-        echo "Invaild operate"
+    if len(s:theme_list) != 0
+        if a:operate == "next"
+            call <sid>load_next_theme()
+        elseif a:operate == "previous"
+            call <sid>load_previous_theme()
+        elseif a:operate == "random"
+            call <sid>load_theme_by_random()
+        else
+            echo "Invaild operate"
+        endif
     endif
 endfunction
 
 " 显示当前主题名
 function! change#change#show_theme()
-    echo "Current theme[" . s:theme_list[s:current_pos] . "]"
+    if s:current_pos == -1
+        call change#util#show_current_theme()
+    else
+        echo "Current theme[" . s:theme_list[s:current_pos] . "]"
+    endif
 endfunction
 
 " 读取主题

@@ -16,6 +16,11 @@ function! change#util#apply_theme(theme_name)
     execute "colorscheme " . a:theme_name
 endfunction
 
+" 显示当前
+function! change#util#show_current_theme()
+    execute "colorscheme"
+endfunction
+
 " 获取文件的base name
 function! change#util#get_base_name(path_list)
     return map(a:path_list, 'fnamemodify(v:val, ":t:r")')

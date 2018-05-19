@@ -10,17 +10,22 @@ change-colorscheme: A quick change theme plugin for vim
 使用
 ------------
 
-请将以下配置加到 `~/.vimrc`:
+请将以下配置加到 `~/.vimrc`，如果不喜欢以下映射，可根据个人喜好更改。
 
-    nnoremap <silent> <F10> :NextColorScheme<cr>
-    inoremap <silent> <F10> <esc> :NextColorScheme<cr>
     nnoremap <silent> <F9> :PreviousColorScheme<cr>
     inoremap <silent> <F9> <esc> :PreviousColorScheme<cr>
+    nnoremap <silent> <F10> :NextColorScheme<cr>
+    inoremap <silent> <F10> <esc> :NextColorScheme<cr>
+    nnoremap <silent> <F11> :RandomColorScheme<cr>
+    inoremap <silent> <F11> <esc> :RandomColorScheme<cr>
+    nnoremap <silent> <F12> :ShowColorScheme<cr>
+    inoremap <silent> <F12> <esc> :ShowColorScheme<cr>
+
 
 注意
 ------------
 
-该插件将会加载`~/.vim/colors`下的主题文件.
+该插件将会加载`~/.vim`下的所有主题文件.
 
 截图
 ------------
