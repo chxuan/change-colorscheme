@@ -56,7 +56,7 @@ endfunction
 
 " 加载下一个主题
 function! s:load_next_theme()
-    if s:current_pos + 1 <= len(s:theme_list)
+    if s:current_pos + 1 < len(s:theme_list)
         let s:current_pos += 1
         call change#util#apply_theme(s:theme_list[s:current_pos])
     endif
