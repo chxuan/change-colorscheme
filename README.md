@@ -4,7 +4,7 @@ change-colorscheme: A quick change theme plugin for vim
 安装
 ------------
     
-如果你使用[Vundle][1]插件管理器, 将 `Plugin 'chxuan/change-colorscheme'` 加到 `~/.vimrc` 然后执行 `:PluginInstall`.
+如果你使用[Vundle][1]插件管理器, 将 `Plugin 'chxuan/change-colorscheme'` 加到 `~/.vimrc` 然后执行 `:PluginInstall`。
 
 
 使用
@@ -36,7 +36,7 @@ change-colorscheme: A quick change theme plugin for vim
 注意
 ------------
 
-该插件将会加载`~/.vim`下的所有主题文件.
+该插件将会加载`~/.vim`下的所有主题文件。
 
 截图
 ------------
