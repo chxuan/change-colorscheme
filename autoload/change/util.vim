@@ -1,7 +1,7 @@
 " ==============================================================
 " Author: chxuan <787280310@qq.com>
-" Repository: https://github.com/chxuan/cppfun
-" Create Date: 2018-05-01
+" Repository: https://github.com/chxuan/change-colorscheme
+" Create Date: 2016-05-16
 " License: MIT
 " ==============================================================
 
