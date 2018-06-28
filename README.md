@@ -13,7 +13,6 @@ change-colorscheme: A quick change theme plugin for vim
 
     Plugin 'chxuan/change-colorscheme'
 
-
 ## 使用
 
 - `:PreviousColorScheme`
