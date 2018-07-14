@@ -18,7 +18,7 @@ function! change#change#change_theme(operate)
         call <sid>read_theme_list()
     endif
 
-    if len(s:theme_list) != 0
+    if len(s:theme_list) > 0
         if a:operate == "next"
             call <sid>load_next_theme()
         elseif a:operate == "previous"
