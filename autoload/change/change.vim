@@ -5,12 +5,17 @@
 " License: MIT
 " ==============================================================
 
-" 默认主题搜索路径
-let s:search_path = "~/.vim"
 " 主题列表
-let s:theme_list = []
+let s:theme_list = sort(getcompletion('','color'))
+
+" 当前主题
+let current_theme = substitute(execute("colorscheme"),"\n","","")
+
+" 把当前主题加入到列表顶端
+let s:theme_list = insert(s:theme_list, current_theme, 0)
+
 " 当前主题位置
-let s:current_pos = -1
+let s:current_pos = 0
 
 " 改变主题
 function! change#change#change_theme(operate)
@@ -36,19 +41,13 @@ function! change#change#show_theme()
     if s:current_pos == -1
         call change#util#show_current_theme()
     else
-        echo "Current theme[" . s:theme_list[s:current_pos] . "]"
+        echo "Current theme [" . s:theme_list[s:current_pos] . "]"
     endif
-endfunction
-
-" 读取主题
-function! s:read_theme_list()
-    let path_list = <sid>search_theme()
-    let s:theme_list = change#util#get_base_name(path_list)
 endfunction
 
 " 加载上一个主题
 function! s:load_previous_theme()
-    if s:current_pos > 0 
+    if s:current_pos > 0
         let s:current_pos -= 1
         call change#util#apply_theme(s:theme_list[s:current_pos])
     endif
@@ -67,9 +66,3 @@ function! s:load_theme_by_random()
     let s:current_pos = change#util#get_random(0, len(s:theme_list) - 1)
     call change#util#apply_theme(s:theme_list[s:current_pos])
 endfunction
-
-" 搜索主题
-function! s:search_theme()
-    return change#util#search_files(s:search_path, "**/colors/*.vim")
-endfunction
-
