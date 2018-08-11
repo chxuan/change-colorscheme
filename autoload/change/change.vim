@@ -9,20 +9,16 @@
 let s:theme_list = sort(getcompletion('','color'))
 
 " 当前主题
-let current_theme = substitute(execute("colorscheme"),"\n","","")
+let s:current_theme = substitute(execute("colorscheme"),"\n","","")
 
 " 把当前主题加入到列表顶端
-let s:theme_list = insert(s:theme_list, current_theme, 0)
+let s:theme_list = insert(s:theme_list, s:current_theme, 0)
 
 " 当前主题位置
 let s:current_pos = 0
 
 " 改变主题
 function! change#change#change_theme(operate)
-    if len(s:theme_list) == 0
-        call <sid>read_theme_list()
-    endif
-
     if len(s:theme_list) > 0
         if a:operate == "next"
             call <sid>load_next_theme()
@@ -38,11 +34,7 @@ endfunction
 
 " 显示当前主题名
 function! change#change#show_theme()
-    if s:current_pos == -1
-        call change#util#show_current_theme()
-    else
-        echo "Current theme [" . s:theme_list[s:current_pos] . "]"
-    endif
+    echo "Current theme [" . s:theme_list[s:current_pos] . "]"
 endfunction
 
 " 加载上一个主题

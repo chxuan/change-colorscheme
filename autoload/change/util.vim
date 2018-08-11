@@ -11,11 +11,6 @@ function! change#util#apply_theme(theme_name)
     execute "colorscheme " . a:theme_name
 endfunction
 
-" 显示当前主题名
-function! change#util#show_current_theme()
-    execute "colorscheme"
-endfunction
-
 " 生成随机数 $RANDOM % (max - min + 1) + min
 function! change#util#get_random(min, max)
     return system("echo $(($RANDOM % (" . a:max . "-" . a:min . " + 1) + ". a:min . "))")
